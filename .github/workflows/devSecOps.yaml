@@ -40,17 +40,24 @@ jobs:
     name: Bandit
     runs-on: ubuntu-latest
     steps:
-      # - run: pip install bandit
-      # - run: check -bandi
-      uses: jpetrucciani/bandit-check@main
-      with:
-        bandit_flags: '-r .  -o output.json -f json' 
+      - name: bandit
+        run: echo "Echo Building Going on!!"
+ 
+ 
+ 
   build-dummy:
     name: Build Echo Statement
     runs-on: ubuntu-latest
     steps:
-      - name: Echo Building Going On
-        run: echo "Echo Building Going on!!"
+      uses: jpetrucciani/bandit-check@main
+      - name: path
+        uses: jpetrucciani/bandit-check@main
+        with:
+        path: '.'
+      - name: flag
+        uses: jpetrucciani/bandit-check@main
+        with:
+          bandit_flags: '-lll -o output.json -f json'
 
   deploy-dummy:
     name: Deploy Echo Statement
