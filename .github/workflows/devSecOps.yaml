@@ -5,6 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
 
+jobs:
 component-analysis-npm-audit:
   name: Component Analysis and NPM Audit
   runs-on: ubuntu-latest
@@ -23,7 +24,6 @@ component-analysis-npm-audit:
         name: npm-audit-report
         path: npm-audit.json
 
-jobs:
   build-dummy:
     name: Build Echo Statement
     runs-on: ubuntu-latest
