@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: '14'
+      - name: create log file:
+        run: npm i --package-lock-only
       - name: lock
         run: npm config set package-lock true
       - name: install npm
