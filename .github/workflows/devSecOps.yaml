@@ -51,7 +51,7 @@ jobs:
       - name: path
         uses: jpetrucciani/bandit-check@main
         with:
-        path: '.'
+          path: '.'
       - name: flag
         uses: jpetrucciani/bandit-check@main
         with:
