@@ -17,8 +17,12 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: '14'
+      - name: lock
+        run: npm config set package-lock true
       - name: install npm
-        run: npm set audit false
+        run: npm install -g npm@latest
+      - name: update npm
+        run: npm i -g npm-upgrade
       - name: Run NPM Audit
         run: npm audit --json > npm-audit.json
       - name: Upload NPM Audit Report
