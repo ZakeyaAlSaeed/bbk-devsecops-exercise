@@ -25,8 +25,8 @@ jobs:
       #   run: npm install -g npm@latest
       # - name: update npm
       #   run: npm i -g npm-upgrade
-      - name: Install dependendcies
-        run: npm install
+      - run: npm install --package-lock
+      - run: npm audit fix
       - name: Run NPM Audit
         run: npm audit --json > npm-audit.json
         continue-on-error: true
@@ -35,7 +35,7 @@ jobs:
         with:
           name: npm-audit-report
           path: npm-audit.json
-          run: ls 
+
 
   build-dummy:
     name: Build Echo Statement
