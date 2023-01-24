@@ -17,8 +17,9 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: '14'
+      - name: install npm
+        run: npm set audit false
       - name: Run NPM Audit
-        run: npm i --package-lock-only
         run: npm audit --json > npm-audit.json
       - name: Upload NPM Audit Report
         uses: actions/upload-artifact@v3
