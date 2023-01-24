@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: '14'
       - name: Run NPM Audit
+        run: npm i --package-lock-only
         run: npm audit --json > npm-audit.json
       - name: Upload NPM Audit Report
         uses: actions/upload-artifact@v3
