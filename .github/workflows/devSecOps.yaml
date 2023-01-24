@@ -40,9 +40,11 @@ jobs:
     name: Bandit
     runs-on: ubuntu-latest
     steps:
-      - run: pip install bandit
-      - run: bandit taskManager/views.py
-
+      # - run: pip install bandit
+      # - run: check -bandi
+      uses: jpetrucciani/bandit-check@main
+      with:
+        bandit_flags: '-r .  -o output.json -f json' 
   build-dummy:
     name: Build Echo Statement
     runs-on: ubuntu-latest
