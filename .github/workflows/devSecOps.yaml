@@ -36,6 +36,12 @@ jobs:
           name: npm-audit-report
           path: npm-audit.json
 
+  bandit:
+    name: Bandit
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install bandit
+      - run: bandit taskManager/views.py
 
   build-dummy:
     name: Build Echo Statement
