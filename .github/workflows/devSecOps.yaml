@@ -40,14 +40,6 @@ jobs:
     name: Bandit
     runs-on: ubuntu-latest
     steps:
-      - name: bandit
-        run: echo "Echo Building Going on!!"
-
-
-  build-dummy:
-    name: Build Echo Statement
-    runs-on: ubuntu-latest
-    steps:
       - name: path
         uses: jpetrucciani/bandit-check@main
         with:
@@ -61,6 +53,14 @@ jobs:
         with:
           name: output.json
           path: output.json
+
+
+  build-dummy:
+    name: Build Echo Statement
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Build Going On
+        run: echo "Echo Building Going on!!"
 
   deploy-dummy:
     name: Deploy Echo Statement
